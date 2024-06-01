@@ -13,6 +13,8 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
 
+    "typeRoots": ["./node_modules/@types/", "./types", "./node_modules"],
+
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
