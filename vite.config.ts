@@ -1,16 +1,21 @@
 import { defineConfig } from "vite";
-import path from "path";
+import { fileURLToPath, URL } from "node:url";
 
+import VueRouter from "vue-router/vite";
 import vue from "@vitejs/plugin-vue";
+import tailwindcss from "@tailwindcss/vite";
 import icons from "unplugin-icons/vite";
-import routes from "vite-plugin-pages";
+import components from "unplugin-vue-components/vite";
+import resolver from "unplugin-icons/resolver";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    VueRouter(),
     vue(),
+    tailwindcss(),
     icons({ compiler: "vue3" }),
-    routes({ pagesDir: path.resolve(__dirname, "src/pages") }),
+    components({ dts: true, resolvers: [resolver()] }),
   ],
 
   server: {
@@ -19,7 +24,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
 });
