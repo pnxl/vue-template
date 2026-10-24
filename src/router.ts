@@ -6,6 +6,22 @@ export const router = createRouter({
   routes,
 });
 
+function addRedirects() {
+  // example of adding redirects programmatically
+  /*   router.addRoute({
+   *     path: "/new-about",
+   *     redirect: "/about?from=hoho",
+   *    });
+   */
+}
+
 if (import.meta.hot) {
-  handleHotUpdate(router);
+  // development
+  handleHotUpdate(router, (routes) => {
+    console.log("🔥 HMR with", routes);
+    addRedirects();
+  });
+} else {
+  // production
+  addRedirects();
 }
