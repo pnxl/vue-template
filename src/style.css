@@ -8,9 +8,51 @@
   color-scheme: light;
 }
 
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  --text-xs--line-height: calc(1 / 0.625);
+  --text-xs: 0.625rem;
+  --text-sm--line-height: calc(1 / 0.75);
+  --text-sm: 0.75rem;
+  --text-base--line-height: calc(1.25 / 0.875);
+  --text-base: 0.875rem;
+  --text-lg--line-height: calc(1.5 / 1);
+  --text-lg: 1rem;
+  --text-xl--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.125rem;
+  --text-2xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.25rem;
+  --text-3xl--line-height: calc(2 / 1.5);
+  --text-3xl: 1.5rem;
+  --text-4xl--line-height: calc(2.25 / 1.875);
+  --text-4xl: 1.875rem;
+  --text-5xl--line-height: calc(2.5 / 2.25);
+  --text-5xl: 2.25rem;
+  --text-6xl--line-height: 1;
+  --text-6xl: 3rem;
+  --text-7xl--line-height: 1;
+  --text-7xl: 3.75rem;
+  --text-8xl--line-height: 1;
+  --text-8xl: 4.5rem;
+  --text-9xl--line-height: 1;
+  --text-9xl: 6rem;
+}
+
 @layer base {
   body {
-    @apply bg-white text-sm text-black dark:bg-gray-900 dark:text-white *:selection:bg-indigo-500 *:selection:text-white dark:*:selection:bg-indigo-700 dark:*:selection:text-white;
+    /* backgrounds */
+    @apply bg-white dark:bg-gray-900;
+    /* texts */
+    @apply text-base text-black dark:text-white;
+    /* selections */
+    @apply *:selection:bg-indigo-500 *:selection:text-white dark:*:selection:bg-indigo-700 dark:*:selection:text-white;
   }
 
   button,
