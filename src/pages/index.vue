@@ -2,10 +2,9 @@
   <div
     class="flex flex-col gap-y-2 justify-center items-center w-full h-screen"
   >
-    <h1 class="font-semibold text-2xl">pnxl/vue-template</h1>
-    <p class="text-lg">
+    <Hello title="pnxl/vue-template">
       a clean, yet fully-featured template for your vue projects
-    </p>
+    </Hello>
     <p class="mt-4 dark:text-white/75 text-black/75">
       please refer to
       <a
@@ -20,5 +19,6 @@
 </template>
 
 <script setup lang="ts">
+import Hello from "@/components/Hello.vue";
 import IconLaunch from "virtual:icons/mdi/launch";
 </script>
