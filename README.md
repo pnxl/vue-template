@@ -119,6 +119,24 @@ then use the icons like this:
 
 ignore any type errors when using icons, they will be generated automatically
 
+### editing the site's metadata
+
+head over to `index.html` and edit the `<head>` section, for example:
+
+```html
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pnxl/vue-template</title>
+  <meta
+    name="description"
+    content="a clean template for your vue projects, packed with Tailwind CSS, automatic page routing, and icons from unplugin-icons"
+  />
+  <meta name="keywords" content="vue, template, tailwind, unplugin-icons" />
+</head>
+```
+
 ### building for production
 
 ```bash
